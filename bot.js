@@ -1,11 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const document = storage.html;
 
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	//console.log('Online at\n-----' + D.toString().replace('UTC','CDT').replace('+0000','-0500') + '\n-----' + UTC);
 	client.user.setActivity('type s~help for commands');
+	// Check for the various File API support.
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		readSingleFile();
+	} else {
+		console.log('The File APIs are not fully supported by your browser.');
+	}
 });
 
 client.on('message', message => {
@@ -20,5 +25,23 @@ client.on('message', message => {
 		}
 	}
 });
+
+function readSingleFile(evt) {
+	//Retrieve the first (and only!) File from the FileList object
+	var f = evt.target.files[0]; 
+
+	if (f) {
+		var r = new FileReader();
+		r.onload = function(e) { 
+			var contents = e.target.result;
+			console.log( "Got the file.n" +"name: " + f.name + "n"+"type: " + f.type + "n" +"size: " + f.size + " bytesn"  + "starts with: " + contents.substr(1, contents.indexOf("n")));  
+		}
+		r.readAsText(f);
+	} else { 
+		console.log("Failed to load file");
+	}
+}
+
+//document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
 
 client.login(process.env.BOT_TOKEN);
