@@ -15,7 +15,7 @@ client.on('message', message => {
 		args = args.splice(1).toString().replace(/,/g,' ');
     		if(cmd == 'ping'){
     			message.reply('pong');
-			document.createElement("p").innerHTML = message.content;
+			document.getElementById("test").innerHTML = message.content;
 		}
 	}
 });
