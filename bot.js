@@ -9,11 +9,11 @@ client.on('ready', () => {
 client.on('message', message => {
 	message.content = message.content.toLowerCase()
 	if (message.content.substring(0,2) === 's~' && message.author.bot == false) {
-		var args = message.content.substring(1).split(' ');
+		var args = message.content.substring(2).split(' ');
 		var cmd = args[0];
 		args = args.splice(1).toString().replace(/,/g,' ');
-    	if(cmd == 'ping'){
-    		message.reply('pong');
+    		if(cmd == 'ping'){
+    			message.reply('pong');
 		}
 	}
 });
