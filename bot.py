@@ -7,8 +7,8 @@ client = commands.Bot(command_prefix='s~')
 @client.event
 async def on_ready():
     print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
+    print(client.user.name)
+    print(client.user.id)
     print('------')
     await client.change_presence(game=discord.Game(name="--Insert-Game-name-here--"))
 
