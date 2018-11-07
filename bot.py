@@ -10,7 +10,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_presence(discord.Game(name="--Insert-Game-name-here--"))
+    await client.change_presence(Game(name="--Insert-Game-name-here--"))
 
 @client.command(name="exCommand") # 'name' is literaly the name of the command
                                   # this is what you type after the prefix
