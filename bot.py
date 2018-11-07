@@ -18,6 +18,6 @@ async def exampleCommand(): # commands can also take paramenters this example ta
                             # but if it does have paramenter when the command is called it'll need
                             # them or else the command won't work
   
-	await client.say("This is an example of a Command Funtion")
+	await client.say("This is an example of a Command Function")
 
 client.run('NTA3OTg3NDIxODc5NTk5MTQ0.DsTNrw.THFXaWPesJkagcT7cxhCEgKiGgU')#TOKEN)
