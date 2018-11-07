@@ -6,11 +6,12 @@ client = Bot(command_prefix='s~')
 
 @client.event
 async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
-    await client.change_presence(Game="--Insert-Game-name-here--")
+	print('Logged in as')
+	print(client.user.name)
+	print(client.user.id)
+	print('------')
+	game = discord.Game(name="s~", type=0)
+	await client.change_presence(Game=game)
 
 # This tell the Interpreter that this function is a command for discord
 @client.command(name="exCommand") # 'name' is literaly the name of the command
