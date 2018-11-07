@@ -15,7 +15,7 @@ async def on_ready():
 def exampleCommand(): # commands can also take paramenters this example takes none
                             # but if it does have paramenter when the command is called it'll need
                             # them or else the command won't work
-	await client.say("This is an example of a Command Function")
+	await client.send_message("This is an example of a Command Function")
 
 @client.command(name="exCommand") # 'name' is literaly the name of the command
                                   # this is what you type after the prefix
