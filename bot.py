@@ -30,11 +30,15 @@ async def store(ctx, label:str, *, data:str):
 	s~store [data label] [data to store]
 	'''
 	target = str(ctx.message.guild) + ".txt"
+	spaceCount = target.count(" ")
+	target.replace(" ", "_", spaceCount)
 	doc = open(target, "a+")
 	await ctx.send(target)
-	docL = doc.readlines()
-	for i in docL:
-		await ctx.send(i)
+	contents = doc.read()
+	await ctx.send(contents)
+	#docL = doc.readlines()
+	#for i in docL:
+	#	await ctx.send(i)
 		#if (i == ctx.message.author):
 		#	x = i
 		#	for x in docL:
