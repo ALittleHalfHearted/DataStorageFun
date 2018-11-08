@@ -34,8 +34,8 @@ async def store(ctx, label:str, *, data:str):
 	spaceCount = fileName.count(" ")
 	fileName = fileName.replace(" ", "_", spaceCount)
 	await ctx.send(fileName)
-	os.chroot(DataStorageFun/Storage)
+	os.chroot("DataStorageFun/Storage")
 	os.system("type nul > " + fileName)
-	print(os.listdir(DataStorageFun/Storage))
+	print(os.listdir("DataStorageFun/Storage"))
 	
 client.run(TOKEN)
