@@ -34,7 +34,8 @@ async def store(ctx, label:str, *, data:str):
 	spaceCount = fileName.count(" ")
 	fileName = fileName.replace(" ", "_", spaceCount)
 	await ctx.send(fileName)
-	os.system("cd Storage")
-	os.system("touch " + fileName)
+	os.chroot(DataStorageFun/Storage)
+	os.system("type nul > " + fileName)
+	print(os.listdir(DataStorageFun/Storage))
 	
 client.run(TOKEN)
