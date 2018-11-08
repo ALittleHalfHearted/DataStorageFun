@@ -1,8 +1,8 @@
 import os, discord
-from discord.ext.commands import Bot
+from discord.ext import commands
 
 #TOKEN = os.environ['token']
-client = Bot(command_prefix='s~')
+client = commands.Bot(command_prefix='s~')
 
 @client.event
 async def on_ready():
