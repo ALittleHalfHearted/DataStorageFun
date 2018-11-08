@@ -35,6 +35,6 @@ async def store(ctx, label:str, *, data:str):
 	fileName = fileName.replace(" ", "_", spaceCount)
 	await ctx.send(fileName)
 	os.system("cd Storage")
-	os.system("touch " + target)
+	os.system("touch " + fileName)
 	
 client.run(TOKEN)
