@@ -29,13 +29,13 @@ async def store(ctx, label:str, *, data:str):
 	Store data.
 	s~store [data label] [data to store]
 	'''
-	print('label: ' + label + '\n data: ' + data)
+	print('label: ' + label + '\ndata: ' + data)
 	target = str(ctx.message.guild) + ".txt"
 	spaceCount = target.count(" ")
 	target = target.replace(" ", "_", spaceCount)
 	await ctx.send(target)
 	doc = open(target, "a+")
-	doc.write(label + "\n" + data)
+	doc.write("[" + label + "]\n" + data)
 	doc.close
 	doc = open(target,"r")
 	contents = doc.read()
