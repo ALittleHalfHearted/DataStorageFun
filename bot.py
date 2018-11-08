@@ -30,7 +30,7 @@ async def store(ctx, label:str, *, data:str):
 	s~store [data label] [data to store]
 	'''
 	
-	doc = open(ctx.message.server, "a+")
+	doc = open(ctx.Message.server, "a+")
 	
 	docL = doc.readlines()
 	for i in docL:
