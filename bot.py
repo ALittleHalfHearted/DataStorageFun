@@ -29,7 +29,9 @@ async def store(ctx, label:str, *, data:str):
 	Store data.
 	s~store [data label] [data to store]
 	'''
-	doc = open(str(ctx.message.guild), "a+")
+	target = str(ctx.message.guild) + ".txt"
+	doc = open(target, "a+")
+	ctx.send(target)
 	docL = doc.readlines()
 	for i in docL:
 		ctx.send(i)
