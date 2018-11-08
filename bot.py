@@ -1,7 +1,7 @@
 import os, discord
 from discord.ext import commands
 
-#TOKEN = os.environ['token']
+TOKEN = os.environ['token']
 client = commands.Bot(command_prefix='s~')
 
 @client.event
@@ -48,4 +48,4 @@ async def store(ctx, label:str, *, data:str):
 		#	for x in docL:
 		#		if (
 	
-client.run('NTA3OTg3NDIxODc5NTk5MTQ0.DsTNrw.THFXaWPesJkagcT7cxhCEgKiGgU')#TOKEN)
+client.run(TOKEN)
