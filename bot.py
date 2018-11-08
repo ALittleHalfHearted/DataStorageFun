@@ -10,7 +10,7 @@ async def on_ready():
 	print(client.user.name)
 	print(client.user.id)
 	print('------')
-	await client.change_presence(game=discord.Game(name="s~"))
+	#await client.change_presence(game=discord.Game(name="s~"))
 
 @client.command()
 async def ping(ctx):
@@ -29,9 +29,7 @@ async def store(ctx, label:str, *, data:str):
 	Store data.
 	s~store [data label] [data to store]
 	'''
-	
 	doc = open(str(ctx.message.guild), "a+")
-	
 	docL = doc.readlines()
 	for i in docL:
 		ctx.send(i)
