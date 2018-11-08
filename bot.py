@@ -21,7 +21,7 @@ async def ping(ctx):
     # Get the latency of the bot
     latency = client.latency  # Included in the Discord.py library
     # Send it to the user
-    await ctx.send(client.user.name, "\'s latency is: ", latency)
+    await ctx.send(client.user.name + "\'s latency is: " + latency)
 
 @client.command()
 async def store(ctx, label:str, *, data:str):
@@ -29,6 +29,7 @@ async def store(ctx, label:str, *, data:str):
 	Store data.
 	s~store [data label] [data to store]
 	'''
+	print('label: ' + label + '\n data: ' + data)
 	target = str(ctx.message.guild) + ".txt"
 	spaceCount = target.count(" ")
 	target = target.replace(" ", "_", spaceCount)
