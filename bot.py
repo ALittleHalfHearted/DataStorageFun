@@ -34,7 +34,7 @@ async def store(ctx, label:str, *, data:str):
 	target = target.replace(" ", "_", spaceCount)
 	await ctx.send(target)
 	doc = open(target, "a+")
-	doc.write(label, "\n", data)
+	doc.write(label + "\n" + data)
 	contents = doc.read()
 	await ctx.send(contents)
 	#docL = doc.readlines()
