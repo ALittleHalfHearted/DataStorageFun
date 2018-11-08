@@ -33,9 +33,6 @@ async def store(ctx, label:str, *, data:str):
 	spaceCount = target.count(" ")
 	target = target.replace(" ", "_", spaceCount)
 	await ctx.send(target)
-	try:
-		doc = open(target, "x")
-		doc.close()
 	doc = open(target, "a+")
 	contents = doc.read()
 	await ctx.send(contents)
