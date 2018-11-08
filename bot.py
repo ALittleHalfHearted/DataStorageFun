@@ -30,7 +30,7 @@ async def store(ctx, label:str, *, data:str):
 	s~store [data label] [data to store]
 	'''
 	
-	doc = open(ctx.message.guild, "a+")
+	doc = open(str(ctx.message.guild), "a+")
 	
 	docL = doc.readlines()
 	for i in docL:
