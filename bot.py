@@ -35,6 +35,8 @@ async def store(ctx, label:str, *, data:str):
 	await ctx.send(target)
 	doc = open(target, "a+")
 	doc.write(label + "\n" + data)
+	doc.close
+	doc = open(target,"r")
 	contents = doc.read()
 	await ctx.send(contents)
 	#docL = doc.readlines()
