@@ -10,8 +10,7 @@ async def on_ready():
 	print(client.user.name)
 	print(client.user.id)
 	print('------')
-	client.game_name ="s~"
-	#await client.change_presence(Game=game, Status=discord.Status.online)
+	await client.change_presence(game=discord.Game(name="s~"))
 
 # This tell the Interpreter that this function is a command for discord
 @client.command(name="exCommand") # 'name' is literaly the name of the command
