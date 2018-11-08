@@ -34,7 +34,7 @@ async def store(ctx, label:str, *, data:str):
 	
 	docL = doc.readlines()
 	for i in docL:
-		print i
+		print (i)
 		#if (i == ctx.message.author):
 		#	x = i
 		#	for x in docL:
