@@ -19,7 +19,7 @@ async def ping(ctx):
     '''
 
     # Get the latency of the bot
-    latency = bot.latency  # Included in the Discord.py library
+    latency = client.latency  # Included in the Discord.py library
     # Send it to the user
     await ctx.send(latency)
 
