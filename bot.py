@@ -30,10 +30,11 @@ async def store(ctx, label:str, *, data:str):
 	s~store [data label] [data to store]
 	'''
 	print('label: ' + label + '\ndata: ' + data)
-	target = str(ctx.message.guild) + ".txt"
-	spaceCount = target.count(" ")
-	target = target.replace(" ", "_", spaceCount)
-	await ctx.send(target)
+	fileName = str(ctx.message.guild) + ".txt"
+	spaceCount = fileName.count(" ")
+	fileName = fileName.replace(" ", "_", spaceCount)
+	await ctx.send(fileName)
+	target = "Storage/" + fileName
 	doc = open(target, "a+")
 	doc.write("[" + label + "]\n" + data + "\n")
 	doc.close
