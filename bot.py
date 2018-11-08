@@ -34,20 +34,7 @@ async def store(ctx, label:str, *, data:str):
 	spaceCount = fileName.count(" ")
 	fileName = fileName.replace(" ", "_", spaceCount)
 	await ctx.send(fileName)
-	target = "Storage/" + fileName
-	doc = open(target, "a+")
-	doc.write("[" + label + "]\n" + data + "\n")
-	doc.close
-	await ctx.send(doc)
-	doc = open(target,"r")
-	contents = doc.read()
-	await ctx.send(contents)
-	#docL = doc.readlines()
-	#for i in docL:
-	#	await ctx.send(i)
-		#if (i == ctx.message.author):
-		#	x = i
-		#	for x in docL:
-		#		if (
+	os.system("cd Storage")
+	os.system("touch " + target)
 	
 client.run(TOKEN)
