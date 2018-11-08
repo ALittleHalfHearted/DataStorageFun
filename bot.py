@@ -12,14 +12,16 @@ async def on_ready():
 	print('------')
 	await client.change_presence(game=discord.Game(name="s~"))
 
-# This tell the Interpreter that this function is a command for discord
-@client.command(name="exCommand") # 'name' is literaly the name of the command
-                                  # this is what you type after the prefix
-async def exampleCommand(): # commands can also take paramenters this example takes none
-                            # but if it does have paramenter when the command is called it'll need
-                            # them or else the command won't work
-	
-	await client.say("This is an example of a Command Funtion")
+@client.command()
+async def ping(ctx):
+    '''
+    This text will be shown in the help command
+    '''
+
+    # Get the latency of the bot
+    latency = bot.latency  # Included in the Discord.py library
+    # Send it to the user
+    await ctx.send(latency)
 
 	
 client.run('NTA3OTg3NDIxODc5NTk5MTQ0.DsTNrw.THFXaWPesJkagcT7cxhCEgKiGgU')#TOKEN)
