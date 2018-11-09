@@ -1,8 +1,9 @@
 import os, discord
 from discord.ext import commands
 
+PREFIX = 's~'
 TOKEN = os.environ['token']
-bot = commands.Bot(prefix='s~')
+bot = commands.Bot(command_prefix=PREFIX)
 
 @bot.event
 async def on_ready():
@@ -10,7 +11,7 @@ async def on_ready():
 	print(bot.user.name)
 	print(bot.user.id)
 	print('------')
-	await bot.change_presence(activity=discord.Game(name=prefix + 'commands for help'))
+	await bot.change_presence(activity=discord.Game(name=PREFIX + 'commands for help'))
 
 @bot.command()
 async def ping(ctx):
