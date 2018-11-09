@@ -2,7 +2,7 @@ import os, discord
 from discord.ext import commands
 
 TOKEN = os.environ['token']
-bot = commands.Bot(command_prefix='s~')
+bot = commands.Bot(prefix='s~')
 
 @bot.event
 async def on_ready():
@@ -10,8 +10,7 @@ async def on_ready():
 	print(bot.user.name)
 	print(bot.user.id)
 	print('------')
-	Playing = discord.Game(name="s~")
-	await bot.change_presence(activity=discord.Game(name='my game'))
+	await bot.change_presence(activity=discord.Game(name=prefix + 'commands for help'))
 
 @bot.command()
 async def ping(ctx):
