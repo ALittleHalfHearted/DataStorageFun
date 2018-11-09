@@ -11,12 +11,19 @@ async def on_ready():
 	print(bot.user.name)
 	print(bot.user.id)
 	print('------')
-	await bot.change_presence(activity=discord.Game(name=PREFIX + 'commands for help'))
+	await bot.change_presence(activity=discord.Game(name=PREFIX + 'help'))
+
+@bot.command()
+async def help(ctx):
+	'''
+	Seriously?
+	'''
+	await ctx.send("```COMMANDS```\ns~ping\ns~store")
 
 @bot.command()
 async def ping(ctx):
     '''
-    This text will be shown in the help command
+    Get the latency of the bot.
     '''
 
     # Get the latency of the bot
