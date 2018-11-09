@@ -13,12 +13,12 @@ async def on_ready():
 	print('------')
 	await bot.change_presence(activity=discord.Game(name=PREFIX + 'help'))
 
-@bot.command()
-async def help(ctx):
-	'''
-	Seriously?
-	'''
-	await ctx.send("```COMMANDS```\ns~ping\ns~store")
+#@bot.command()
+#async def help(ctx):
+#	'''
+#	Seriously?
+#	'''
+#	await ctx.send("```COMMANDS```\ns~ping\ns~store")
 
 @bot.command()
 async def ping(ctx):
