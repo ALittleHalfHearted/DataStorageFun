@@ -13,12 +13,6 @@ async def on_ready():
 	print('------')
 	await bot.change_presence(activity=discord.Game(name=PREFIX + 'help'))
 
-#@bot.command()
-#async def help(ctx):
-#	'''
-#	Seriously?
-#	'''
-#	await ctx.send("```COMMANDS```\ns~ping\ns~store")
 
 @bot.command()
 async def ping(ctx):
@@ -34,7 +28,7 @@ async def ping(ctx):
 @bot.command()
 async def store(ctx, label:str, *, data:str):
 	'''
-	Store data.
+	Store data. [WIP]
 	s~store [data label] [data to store]
 	'''
 	print('label: ' + label + '\ndata: ' + data)
