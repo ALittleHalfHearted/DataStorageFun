@@ -2,28 +2,28 @@ import os, discord
 from discord.ext import commands
 
 TOKEN = os.environ['token']
-client = commands.Bot(command_prefix='s~')
+bot = commands.Bot(command_prefix='s~')
 
-@client.event
+@bot.event
 async def on_ready():
 	print('Logged in as')
-	print(client.user.name)
-	print(client.user.id)
+	print(bot.user.name)
+	print(bot.user.id)
 	print('------')
-	await client.change_presence(game=discord.Game(name="s~"))
+	await bot.change_presence(*,game=discord.Game(name="s~"), status=None, afk=False)
 
-@client.command()
+@bot.command()
 async def ping(ctx):
     '''
     This text will be shown in the help command
     '''
 
     # Get the latency of the bot
-    latency = client.latency  # Included in the Discord.py library
+    latency = bot.latency  # Included in the Discord.py library
     # Send it to the user
-    await ctx.send(client.user.name + "\'s latency is: " + str(latency))
+    await ctx.send(bot.user.name + "\'s latency is: " + str(latency))
 
-@client.command()
+@bot.command()
 async def store(ctx, label:str, *, data:str):
 	'''
 	Store data.
@@ -38,4 +38,4 @@ async def store(ctx, label:str, *, data:str):
 	os.system("type nul > " + fileName)
 	print(os.listdir("DataStorageFun/Storage"))
 	
-client.run(TOKEN)
+bot.run(TOKEN)
