@@ -10,7 +10,8 @@ async def on_ready():
 	print(bot.user.name)
 	print(bot.user.id)
 	print('------')
-	await bot.change_presence(game=discord.Game(name="s~"), status=None, afk=False)
+	Playing = discord.Game(name="s~")
+	await bot.change_presence(game=Playing, status=None, afk=False)
 
 @bot.command()
 async def ping(ctx):
